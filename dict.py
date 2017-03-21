@@ -86,8 +86,11 @@ while line:
 
 		word = line[line.rindex(':')+1:]
 		word = word.replace("\n","")
-
-		lookW(word)
+		
+		if word not in synonym:
+			print "ERROR: word does not exist in Theraurus."
+		else:
+			lookW(word)
 
 	#parsing when lines start with lookupSynonyms
 	if line.startswith('lookupSynonyms'):
